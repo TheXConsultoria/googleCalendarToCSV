@@ -31,10 +31,7 @@ Os passos a seguir precisam ser seguidos apenas uma vez.
 7. Profit!
 
 ### Futuras execuções
-Para executar novamente a aplicação, basta apenas executar o comando (de dentro do diretório da aplicação):
-    ```javascript
-    node gcn.js
-    ```
+Para executar novamente a aplicação, basta apenas executar o comando (de dentro do diretório da aplicação): `node gcn.js`
 
 ## Estrutura do arquivo CSV
    
