@@ -4,12 +4,14 @@ Download de todos os eventos futuros de sua agenda do Google Agenda em formato C
 
 ## Setup
 
-Os passos a seguir precisam ser seguidos apenas uma vez.
+Os passos a seguir precisam ser seguidos *apenas uma vez*.
 
 1. Baixar e [instalar o nodeJs](https://nodejs.org/en/download/)
 2. Baixar o código deste repositório - basta clicar no botão **Download ZIP** nesta página
 3. [Obter um ID de OAuth2](https://developers.google.com/google-apps/calendar/quickstart/nodejs#step_1_turn_on_the_api_name) válido junto ao Google
+
   3.1 Não se esqueça de salvar seu arquivo `client_secret.json` no mesmo diretório desta aplicação
+  
 4. Executar os seguintes comandos (de dentro do diretório da aplicação)
 
     4.1 Baixar as dependências do projeto
