@@ -26,7 +26,7 @@ Os passos a seguir precisam ser seguidos *apenas uma vez*.
     node gcn.js
     ```
 5. Acesse o link que a aplicação vai gerar
-    ![](Link.png)
+    ![](LinkOAuth.png)
 
 6. Em seguida, confirme as permissões
 
