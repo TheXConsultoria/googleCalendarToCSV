@@ -25,14 +25,14 @@ Os passos a seguir precisam ser seguidos *apenas uma vez*.
     ```javascript
     node gcn.js
     ```
-5. Acesse o link que a aplicação vai gerar
-    ![](LinkOAuth.png)
-
+5. Acesse o link que a aplicação vai abrir
+    
 6. Em seguida, confirme as permissões
 
     ![](Autorizacao.png)
 
     ![](Segredo.png)
+    
 7. Profit!
 
 ### Futuras execuções
