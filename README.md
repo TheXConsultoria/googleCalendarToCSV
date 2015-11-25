@@ -17,12 +17,12 @@ Follow the steps bellow *just once*.
 4. Run the following commands (from within this application's directory)
 
     4.1 Restore [all dependencies](https://github.com/felipegtx/googleCalendarNode/blob/master/package.json#L10-L16) from this project
-    ```javascript
+    ```sh
     npm update
     ```
 
     4.2 Run the application
-    ```javascript
+    ```sh
     node gcn.js
     ```
 5. Follow the steps through the page opened by the application
