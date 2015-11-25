@@ -1,7 +1,8 @@
-﻿var fs = require('fs'),
+var fs = require('fs'),
     readline = require('readline'),
     google = require('googleapis'),
     googleAuth = require('google-auth-library'),
+    open = require('open'),
     colors = require('colors');
 
 
@@ -57,15 +58,16 @@ function getNewToken(oauth2Client, callback) {
     var authUrl = oauth2Client.generateAuthUrl({ access_type: 'offline', scope: SCOPES });
     
     console.log();
-    console.log('Para autorizar o acesso, visite o link abaixo: '.yellow);
+    console.log('Para autorizar o acesso, preencha o formulário aberto em seu navegador'.yellow);
     console.log();
-    console.log(authUrl);
+    open(authUrl);
+
     var rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout
     });
     console.log();
-    rl.question('Entre aqui o código gerado pelo link anterior: '.cyan, function (code) {
+    rl.question('Entre aqui o código gerado na página: '.cyan, function (code) {
         rl.close();
         oauth2Client.getToken(code, function (err, token) {
             if (err) {
