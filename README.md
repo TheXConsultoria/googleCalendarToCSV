@@ -8,9 +8,9 @@ Follow the steps bellow *just once*.
 
 1. Download and install [NodeJS](https://nodejs.org/en/download/)
 
-2. Download this repo - just click on the **Download ZIP** button available in this very page
+2. Download this repo - *just click on the `Download ZIP` button available in this very page*
 
-3. [Grab a valid OAuth2 ID](https://developers.google.com/google-apps/calendar/quickstart/nodejs#step_1_turn_on_the_api_name)
+3. [Create a valid OAuth2 ID](https://developers.google.com/google-apps/calendar/quickstart/nodejs#step_1_turn_on_the_api_name)
 
   3.1 Remember to save your `client_secret.json` in the directory you've saved this code
   
