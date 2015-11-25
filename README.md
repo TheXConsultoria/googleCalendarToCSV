@@ -1,33 +1,33 @@
-﻿# Download de eventos do Google Calendar
+# Google Calendar events to CSV
 
-Download de todos os eventos futuros de sua agenda do Google Agenda em formato CSV.
+Downloads all future events from your Google Calendars and saves it as a CSV file.
 
 ## Setup
 
-Os passos a seguir precisam ser seguidos *apenas uma vez*.
+Follow the steps bellow *just once*.
 
-1. Baixar e [instalar o nodeJs](https://nodejs.org/en/download/)
+1. Download and install [NodeJS](https://nodejs.org/en/download/)
 
-2. Baixar o código deste repositório - basta clicar no botão **Download ZIP** nesta página
+2. Download this repo - just click on the **Download ZIP** button available in this very page
 
-3. [Obter um ID de OAuth2](https://developers.google.com/google-apps/calendar/quickstart/nodejs#step_1_turn_on_the_api_name) válido junto ao Google
+3. [Grab a valid OAuth2 ID](https://developers.google.com/google-apps/calendar/quickstart/nodejs#step_1_turn_on_the_api_name)
 
-  3.1 Não se esqueça de salvar seu arquivo `client_secret.json` no mesmo diretório desta aplicação
+  3.1 Remember to save your `client_secret.json` in the directory you've saved this code
   
-4. Executar os seguintes comandos (de dentro do diretório da aplicação)
+4. Run the following commands (from within this application's directory)
 
-    4.1 Baixar as dependências do projeto
+    4.1 Restore [all dependencies](https://github.com/felipegtx/googleCalendarNode/blob/master/package.json#L10-L16) from this project
     ```javascript
     npm update
     ```
 
-    4.2 Executar a aplicação
+    4.2 Run the application
     ```javascript
     node gcn.js
     ```
-5. Acesse o link que a aplicação vai abrir
+5. Follow the steps through the page opened by the application
     
-6. Em seguida, confirme as permissões
+6. Allow the app to access your data
 
     ![](Autorizacao.png)
 
@@ -35,14 +35,15 @@ Os passos a seguir precisam ser seguidos *apenas uma vez*.
     
 7. Profit!
 
-### Futuras execuções
-Para executar novamente a aplicação, basta apenas executar o comando (de dentro do diretório da aplicação): `node gcn.js`
+### Future executions
 
-## Estrutura do arquivo CSV
+After the first full run, all you need to do in order to gather your data from Google's servers is to run the command `node gcn.js` from within the application directory.
+
+## CSV file structure
    
-  1. Sumário descritivo do evento
-  2. Data/hora início
-  3. Data/hora fim
-  4. Local
-  5. Email do organizador
-  6. Nome do organizador
+  1. Event description (summary)
+  2. Event start
+  3. Event end
+  4. Location
+  5. Event organizer's email address
+  6. Event organizer's display name
