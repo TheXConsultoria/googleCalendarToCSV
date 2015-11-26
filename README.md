@@ -25,13 +25,9 @@ Follow the steps bellow *just once*.
     ```sh
     node gcn.js
     ```
-5. Follow the steps through the page opened by the application
+5. Follow the steps through the page opened by the application to **get the authorization token**
     
-6. Allow the app to access your data
-
-    ![](Autorizacao.png)
-
-    ![](Segredo.png)
+6. Enter de **authorization token** back into the app and hit `enter`
     
 7. Profit!
 
