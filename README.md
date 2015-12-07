@@ -1,6 +1,6 @@
 # Google Calendar events to CSV
 
-Downloads all future events from your Google Calendars and saves it as a CSV file.
+Downloads all events from your Google Calendars and saves it as a CSV file.
 
 ## Setup
 
@@ -35,11 +35,16 @@ Follow the steps bellow *just once*.
 
 After the first full run, all you need to do in order to gather your data from Google's servers is to run the command `node gcn.js` from within the application directory.
 
+### Limitations
+
+The number of events that the this code is able to download is now limited to 2500. This is enforced by Google. [See here](https://developers.google.com/google-apps/calendar/v3/reference/events/list#parameters) for more info (*parameter `maxResults`*).
+
 ## CSV file structure
    
-  1. Event description (summary)
-  2. Event start
-  3. Event end
-  4. Location
-  5. Event organizer's email address
-  6. Event organizer's display name
+  1. Calendar description (usually it's name)
+  2. Event summary
+  3. Event description
+  4. Event start
+  5. Event end
+  6. Location
+  7. Event organizer's email address
