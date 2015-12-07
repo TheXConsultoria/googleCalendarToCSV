@@ -97,26 +97,30 @@ function storeToken(token) {
     console.log('Token stored to ' + TOKEN_PATH);
 }
 
+
 /**
  * Gathers all future events from user's calendar
  *
+ * @param {calendarAPI} calendarAPI Calendar API Instance.
  * @param {google.auth.OAuth2} auth Cliente OAuth.
+ * @param {calendar} item Google calendar data.
  */
-function listEvents(auth) {
-    var calendar = google.calendar('v3');
-    calendar.events.list({
+function getEvents(calendarAPI, auth, item) {
+
+    calendarAPI.events.list({
         auth: auth,
-        calendarId: 'primary',
-        timeMin: (new Date()).toISOString(),
+        calendarId: item.id,
+		maxResults: 2500,
         singleEvents: true,
         orderBy: 'startTime'
     }, function (err, response) {
+	
         if (err) {
-            console.log('API error: '.red + err);
+            console.log('API (events) error: '.red + err);
             return;
         }
         var events = response.items;
-        if (events.length == 0) {
+        if ((!response.items) || (events.length == 0)) {
             
             console.log('No event found.'.yellow);
         } else {
@@ -129,20 +133,43 @@ function listEvents(auth) {
                 var event = events[i];
                 var start = event.start.dateTime || event.start.date;
                 console.log('%s - %s', start, event.summary);
-                
-                data += event.summary + ";" +
+                var description = typeof event.description !== 'undefined' ? event.description.replace(/\r?\n|\r/g, "").replace(/\;/g, "|") : "";
+                data += item.summary + ";" +
+                        event.summary + ";" +
+                        description + ";" +   
                         start + ";" +
                         (event.end.dateTime || event.end.date) + ";" +
                         event.location + ";" +
                         event.organizer.email + ";" +
-                        event.organizer.displayName + ";" +
                         "\n";
             }
             
-            fs.writeFile('events.csv', data, 'utf8', function (err) {
+            fs.writeFile('events' + item.summary + '.csv', data, 'utf8', function (err) {
                 if (err) { return console.log(err); }
-                console.log('Fim!'.green);
+                console.log('Done [' +item.summary + ']!'.green);
             });
         }
     });
+}
+
+/**
+ * Gathers all future events from ALL user's calendars
+ *
+ * @param {google.auth.OAuth2} auth Cliente OAuth.
+ */
+function listEvents(auth) {
+    var calendarAPI = google.calendar('v3');
+    
+    var lists = calendarAPI.calendarList.list({ auth: auth }, 
+	function (err, calendars) {
+		if (err) {
+            console.log('API (calendars) error: '.red + err);
+            return;
+        }
+		
+        for (var c = 0; c < calendars.items.length; c++) {
+                getEvents(calendarAPI, auth, calendars.items[c]);
+		}
+    });
+	
 }
