@@ -12,7 +12,7 @@ Follow the steps bellow *just once*.
 
 3. [Create a valid OAuth2 ID](https://developers.google.com/google-apps/calendar/quickstart/nodejs#step_1_turn_on_the_api_name)
 
-  3.1 Remember to save your `client_secret.json` in the directory you've saved this code
+  3.1 Remember to save your `client_secret.json` in the **same** directory you've saved this code
   
 4. Run the following commands (from within this application's directory)
 
@@ -37,7 +37,7 @@ After the first full run, all you need to do in order to gather your data from G
 
 ### Limitations
 
-The number of events that the this code is able to download is now limited to 2500. This is enforced by Google. [See here](https://developers.google.com/google-apps/calendar/v3/reference/events/list#parameters) for more info (*parameter `maxResults`*).
+The number of events that the this code is able to download is now limited to ``2500``. This is enforced by Google. [See here](https://developers.google.com/google-apps/calendar/v3/reference/events/list#parameters) for more info (*parameter `maxResults`*).
 
 ## CSV file structure
    
